@@ -1,11 +1,12 @@
 import {ErrorResponse} from '../types';
 
-const errorResponse = (code: string, message: string): ErrorResponse => {
+const errorResponse = <T>(code: string, message: string, details?: T): ErrorResponse<T> => {
   return {
     success: false,
     error: {
       code,
       message,
+      details,
     },
   };
 };

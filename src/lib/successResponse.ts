@@ -1,6 +1,6 @@
 import {SuccessResponse} from '../types';
 
-const successResponse = <D, M>(data: D, meta?: M): SuccessResponse<D, M> => {
+const successResponse = <T, S>(data: T, meta?: S): SuccessResponse<T, S> => {
   return {
     success: true,
     data,

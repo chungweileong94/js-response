@@ -1,15 +1,16 @@
-export type SuccessResponse<D, M> = {
+export type SuccessResponse<T, S> = {
   success: true;
-  data: D;
-  meta?: M;
+  data: T;
+  meta?: S;
 };
 
-export type Error = {
+export type Error<T> = {
   code: string;
   message: string;
+  details?: T;
 };
 
-export type ErrorResponse = {
+export type ErrorResponse<T> = {
   success: false;
-  error: Error;
+  error: Error<T>;
 };
